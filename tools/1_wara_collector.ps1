@@ -505,7 +505,7 @@ $Script:Runtime = Measure-Command -Expression {
 
             # Check if a valid context is available or if it matches the provided Tenant ID
             if ($null -eq $AzContext -or $AzContext.Tenant.Id -ne $TenantID) {
-                Write-Verbose "Not logged into a tenant with any of the specified subscriptions. Authenticating to Azure. `n"
+                Write-Verbose "Not logged into a tenant with the specified tenantID $TenantID. Authenticating to Azure. `n"
 
                 # Check if EnableLoginByWam is true
                 if ((Get-AzConfig -EnableLoginByWam).Value -eq $true) {
